@@ -16,7 +16,7 @@ start:
 	li t1, 0	# S
 	li t2, 1	# I
 for_loop:
-	ble t2, t0, end
+	bgt t2, t0, end
 	mul t3, t2, t2
 	add t1, t1, t3
 	addi t2, t2, 1
