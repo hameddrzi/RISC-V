@@ -24,12 +24,21 @@ _start:
 	la t0, array
 	li t1, size
 	lw t1, 0(t1)
-	addi t1, t1, -1 #seize-1
-	ld t2, 0(t0)
-	li t3, 1	#result
+	addi t1, t1, -1 	#seize-1
+	
+	li t3, 1		#result
 for_loop:
+	ble t1, zero, end1
+	ld t2, 0(t0)		
+	addi t2, t2, 8		#array[i+1]
 	
-	
+	ld t4, 0(t0)		#array[i]
+	ble t4, t2, continue
+	addi t3, zero, 0	#result = 0
+continue:
+	addi t1, t1, -1
+	addi t0, t0, 8
+	j for_loop
 
 
 
