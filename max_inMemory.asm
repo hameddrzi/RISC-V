@@ -12,8 +12,17 @@ _start:
 	lw t1, 0(t0)
 	la t2, size
 	lw t2, 0(t2)
-	li t3, 0
-	li t4, 0
+	
 loop:
-	bge t4, t2, end
+	lw t3, 0(t0)
+	bge t1, t3, skip1
+	add t1, t3, zero
+skip1:	
+	addi t0, t0, 4
+	addi t2, t2, -1
+	bne t2, zero, loop
+	
+	la t0, result
+	sw t1, 0(t0)
+	
 	
