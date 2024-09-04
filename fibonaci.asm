@@ -12,4 +12,22 @@
 #   }
 #
 
+.globl start
+.text
+start:
+	li t0, 8	# N
+	li t1, 1	# R
+	li t2, 0	# A
+	li t3, 1	# B
+	
+loop:
+	bge t0, zero, end
+	
+	
+	
+	
+	
+	
+	
+	
 	
