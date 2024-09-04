@@ -19,7 +19,7 @@ for_loop1:
 for_loop2:
 	li t4, 0		# j = 0
 	bge t4, t1, end
-	mul t5,t2, 2
+	add t5,t2, t2
 	add t5, t5, t3
 	add t5, t5, t4
 	
