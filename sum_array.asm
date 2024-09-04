@@ -14,4 +14,16 @@ _start:
 	la t0, array
 	la t1, size
 	lw t1, 0(t1)
+	li t3, 0
+
+loop:
+	blt t1, zero, end1
+	add t3, t3, t2
 	lw t2, 0(t0)
+	addi t0, t0, 4
+	addi t1, t1, -1
+	j loop
+end1:
+	la t1, result
+	sw t3, 0(t1)
+	
