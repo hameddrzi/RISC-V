@@ -5,7 +5,16 @@
 #		    array[i] = array[size-i-1];
 #		    array[size-i-1] = temp;
 #		}      
-###################################################################3
+###################################################################
+
+
+
+
+
+
+
+
+
 .globl _start
 .data
     size:   .word  8                  # size of the array        
@@ -13,3 +22,23 @@
 
 .text
 _start:
+	la t0, array
+	la t1, siza
+	
+	lw t1, 0(t1)
+	srai t1, t1, 1			#size /2
+	li t3, 0			#long temp
+for_loop:
+	bge t1, zero, end1
+	ld t2, 0(t0)			#array[i]
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
