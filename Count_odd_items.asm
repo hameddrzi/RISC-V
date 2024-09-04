@@ -15,5 +15,18 @@ _start:
 	la t0, array
 	la t1, size
 	lw t1, 0(t1)
-	li t3, 1
+	li t3, 2
+	li t5, 0
+	
+loop:
+	ble t1, zero, end1
+	lb t2, 0(t0)
+	rem t4, t2, t3
+	beq t4, zero, jump1
+	addi t5, t5, 1
+	addi t0, t0, 1
+	addi t1, t1, -1
+	j loop
+jump1:
+	
 	
