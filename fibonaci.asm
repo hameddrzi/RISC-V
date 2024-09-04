@@ -22,7 +22,13 @@ start:
 	
 loop:
 	bge t0, zero, end
-	
+	add t1, t2, t3
+	add t2, t3, zero
+	add t3, t1, zero
+	addi t0, t0, -1
+	j loop
+end:
+	ecall
 	
 	
 	
