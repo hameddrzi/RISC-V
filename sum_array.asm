@@ -11,4 +11,7 @@
     
 .text
 _start:
-    
+	la t0, array
+	la t1, size
+	lw t1, 0(t1)
+	lw t2, 0(t0)
