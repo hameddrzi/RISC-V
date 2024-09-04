@@ -8,4 +8,12 @@
 
 .text
 _start:
+	la t0, array
+	lw t1, 0(t0)
+	la t2, size
+	lw t2, 0(t2)
+	li t3, 0
+	li t4, 0
+loop:
+	bge t4, t2, end
 	
