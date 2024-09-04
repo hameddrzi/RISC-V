@@ -23,13 +23,25 @@
 .text
 _start:
 	la t0, array
-	
 	la t1, siza
 	lw t1, 0(t1)
+	
 	addi t1, t1, -1			#size-1
 	slli t1, t1, 3			#size-1 multiply by 8 becuse (doubleword)
-	addi t1, t0, t1
+	addi t1, t0, t1			#array[size-i-1]
+loop:
+	ble t1, t0, end1
 	
+	ld t2, 0(t0)
+	ld t3, 0(t1)
+	sd t3, 0(t0)
+	sd t2, 0(t1)
+	
+	addi t0, t0, 8
+	addi t1, t1, -8
+	j loop
+end1:
+	ecall
 	
 	
 	
