@@ -23,14 +23,13 @@
 .text
 _start:
 	la t0, array
-	la t1, siza
 	
+	la t1, siza
 	lw t1, 0(t1)
-	srai t1, t1, 1			#size /2
-	li t3, 0			#long temp
-for_loop:
-	bge t1, zero, end1
-	ld t2, 0(t0)			#array[i]
+	addi t1, t1, -1			#size-1
+	slli t1, t1, 3			#size-1 multiply by 8 becuse (doubleword)
+	addi t1, t0, t1
+	
 	
 	
 	
