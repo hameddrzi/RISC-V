@@ -23,5 +23,17 @@ _start:
 
 	la t0, array
 	li t1, size
+	lw t1, 0(t1)
+	addi t1, t1, -1 #seize-1
+	ld t2, 0(t0)
+	li t3, 1	#result
+for_loop:
 	
+	
+
+
+
+
+
+
 	
