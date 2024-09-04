@@ -28,5 +28,14 @@ loop:
 	addi t1, t1, -1
 	j loop
 jump1:
+	addi t0, t0, 1
+	addi t1, t1, -1
+	j loop
+end1:
+	la t0, result
+	sw t5, 0(t0)
+	
+	
+	
 	
 	
