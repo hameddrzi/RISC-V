@@ -18,3 +18,31 @@ _start:
     #exit
     li   a7, 10
     ecall
+    
+##### function part #####
+
+strcmp:
+	lbu t0, 0(a0)		#load string 1
+	lbu t1, 0(a1)		#load string 2
+for_loop:
+	bne t0, t1, end_loop
+	
+	bne t1, zero, continua
+	addi a0, zero, 0
+	ret
+continua:
+	addi a0, a0, 1
+	addi a1, a1, 1
+	j for_loop
+end_loop:
+	addi a0, zero , 1
+	ret
+	
+	
+	
+	
+	
+	
+	
+	
+	
