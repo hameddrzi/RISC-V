@@ -38,8 +38,8 @@ invert:
 	sd s1, 16(sp)
 	sd s2, 24(sp)
 	
-	addi s1, zero, 0
-	addi s2, a1, -1
+	addi s1, zero, 0		#i = 0
+	addi s2, a1, -1			#size- 1
 loop_invert:
 	blt s2, s1, end_invert
 	
