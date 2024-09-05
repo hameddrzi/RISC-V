@@ -23,8 +23,13 @@ _start:
 digit:
 	add t1, 48		# ASCII 0
 	add t2, 57		# ASCII 9
-	lbu t0, 0(a0)		#load byte
-	
+	blt a0, t1, ret0
+	bgt a0, t2, ret0
+	li a0, 1
+	ret
+ret0:
+	li a0, 0
+	ret
 	
 	
 	
