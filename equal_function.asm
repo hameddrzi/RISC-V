@@ -41,8 +41,19 @@
             
 equal:
 	slli t0, a1, 2		#Open space to the amount 2^2 = 4
-	add t0, t0, a0
+	add t0, t0, a0		#load array[x]
 	lbu t0, 0(t0)		# array[x]
+	
+	slli t1, a2, 2		#Open space to the amount 2^2 = 4
+	add t1, t1, a0		#load array[y]
+	lbu t1, 0(t1)		#array[y]
+	
+	bne t0, t1, else
+	li a0, 1
+	ret
+else:
+	li a0, 0
+	ret
         
         
         
