@@ -24,7 +24,6 @@ _start:
 strcmp:
 	lbu t0, 0(a0)		#load string 1
 	lbu t1, 0(a1)		#load string 2
-for_loop:
 	bne t0, t1, end_loop
 	
 	bne t1, zero, continua
@@ -33,7 +32,7 @@ for_loop:
 continua:
 	addi a0, a0, 1
 	addi a1, a1, 1
-	j for_loop
+	j strcmp
 end_loop:
 	addi a0, zero , 1
 	ret
