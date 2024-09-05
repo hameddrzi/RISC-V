@@ -28,16 +28,19 @@ _start:
 ##### function part #####
 
 strlen:
-	lbu t0, 0(a0)
-#	li t1, 0
+	addi t0, zero, 0
 for_loop:
-	beq t0, zero, end1
-#	addi t1, t1, 1
+	add t1, t0, a0		#add i into str[]
+	lbu t1, 0(t1)		#str[i]
+
+	beq t1, zero, end1
 	addi t0, t0, 1
 	j for_loop
 end1:
-	mv a0, t0
+	addi a0, t0, 0
 	ret
+
+
 	
 	
 	
