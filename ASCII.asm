@@ -17,3 +17,16 @@ _start:
     #exit
     li   a7, 10
     ecall
+
+##### function part #####
+
+digit:
+	add t1, 48		# ASCII 0
+	add t2, 57		# ASCII 9
+	lbu t0, 0(a0)		#load byte
+	
+	
+	
+	
+	
+	
