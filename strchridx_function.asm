@@ -41,9 +41,8 @@ while_loop:
 	addi a0, a0, 1
 	addi t0, t0, 1
 	
-	
 	bne t1, zero, while_loop
-	li a0, -1
+	addi a0, zero, -1
 	ret
 end:
 	addi a0, t0, 0
