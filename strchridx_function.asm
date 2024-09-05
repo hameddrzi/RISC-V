@@ -14,3 +14,24 @@
 #		}
 
 ###########################################################################################
+
+.globl _start
+.data
+    str:  .string "my long string"
+    c:    .byte 'g'
+.text
+_start:
+    # call strchridx
+    la   a0, str
+    la   a1, c
+    lb   a1, 0(a1)
+    jal  ra, strchridx
+
+    #exit
+    li   a7, 10
+    ecall
+
+##### function part #####
+
+strchridx:
+	
