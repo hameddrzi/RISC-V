@@ -39,3 +39,42 @@
         ecall
         
 ##### function part #####
+
+palindrome:
+	addi sp, sp, -40
+	sd ra, 0(sp)
+	sd s1, 8(sp)
+	sd s2, 16(sp)
+	sd s3, 24(sp)
+	sd a0, 32(sp)
+	
+	addi s1, zero, 0		#i = 0
+	addi s2, a1, -1			# j = size - 1
+	addi s3, zero, 1		# result = 1
+	
+while_loop:
+	bge s1, s2, end
+	
+	ld a0, 32(sp)
+	add a1, s1, zero
+	add a2, s2, zero
+	jal ra, equal
+	and s3, s3, a0
+	
+	addi s1, s1, 1
+	addi s2, s2, -1
+	j while_loop
+end:
+	mv a0, s3
+	ld ra, 0(sp)
+	ld s1, 8(sp)
+	ld s2, 16(sp)
+	ld s3, 24(sp)
+	addi sp, sp, 40
+	ret
+	
+	
+	
+	
+	
+
