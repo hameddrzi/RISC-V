@@ -34,14 +34,13 @@ _start:
 ##### FUNCTION PART #####
 
 mcd:
-	ld t0, 0(a0)		#num1
-	ld t1, 0(a1)		#num2
-	
-while_loop:
-	beq t0, t1, end1
-	ble t0, t1, else
-	add t0, t0, t1
+
+	beq a0, a1, end1
+	bge a1, a0, else
+	sub a0, a0, a1
+	j mcd
 else:
-	add t1, t1, t0
+	sub a1, a1, a0
+	j mcd
 end1:
 	ret
