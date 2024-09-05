@@ -38,5 +38,32 @@ _start:
 
 swap:
 	
+	slli a1, a1, 2
+	slli a2, a2, 2
+	add t1, a0, a1
+	add t2, a0, a2
+	
+	lw t3, 0(t1)
+	lw t4, 0(t2)
+	sw t3, 0(t2)
+	sw t4, 0(t1)
+	
+	ret
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
