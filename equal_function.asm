@@ -39,7 +39,10 @@
 ##### function part #####      
         
             
-equal:        
+equal:
+	slli t0, a1, 2		#Open space to the amount 2^2 = 4
+	add t0, t0, a0
+	lbu t0, 0(t0)		# array[x]
         
         
         
