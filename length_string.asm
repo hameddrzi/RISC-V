@@ -11,3 +11,34 @@
 #		}
 
 ###########################################################################
+
+
+.globl _start
+.data
+    str: .string  "My string"
+.text
+_start:
+    # call strlen
+    la   a0, str
+    jal  ra, strlen
+
+    #exit
+    li   a7, 10
+    ecall
+##### function part #####
+
+strlen:
+	lbu t0, 0(a0)
+#	li t1, 0
+for_loop:
+	beq t0, zero, end1
+#	addi t1, t1, 1
+	addi t0, t0, 1
+	j for_loop
+end1:
+	mv a0, t0
+	ret
+	
+	
+	
+    
