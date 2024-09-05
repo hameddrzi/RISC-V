@@ -36,3 +36,35 @@ _start:
     # exit
     li   a7, 10
     ecall
+    
+##### function part #####
+
+contains:
+	lbu t1, 0(t0)			# str[i]
+	addi a0, a0, 1
+	
+	beqz t1, end1
+	blt t1, a1, contains
+	bgt t1, a2, contains
+	
+	li a0, 1
+	ret
+end1:
+	li a0, 0
+	ret
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
