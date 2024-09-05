@@ -34,4 +34,24 @@ _start:
 ##### function part #####
 
 strchridx:
+	li t0, 0		#long long i
+while_loop:
+	lbu t1, 0(a0)
+	beq t1, a1, end
+	addi a0, a0, 1
+	addi t0, t0, 1
+	
+	
+	bne t1, zero, else
+	li a0, -1
+	ret
+else:
+	addi a0, t0, 0
+	ret
+	
+	
+	
+	
+	
+	
 	
