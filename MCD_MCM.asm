@@ -25,7 +25,7 @@ _start:
     la    a1, num2
     ld    a0, 0(a0)
     ld    a1, 0(a1)     
-    jal   ra, mcd
+    jal   ra, mcm
 
     #exit
     li    a7, 10
@@ -44,3 +44,36 @@ else:
 	j mcd
 end1:
 	ret
+	
+	
+#############################################################################
+
+#Write a RISC-V procedure to calculate the least common multiple (LCM) of two
+#positive integers a and b, LCM(a, b), to be called in the main, using the following relation:
+
+#MCM(a, b) = (a * b) / MCD(a, b)
+
+#The return value should be placed in register a0.
+
+#############################################################################
+
+mcm:
+	addi sp, sp, -16
+	sd ra, 0(sp)
+	sd s1, 8(sp)
+	
+	mul s1, a0, a1
+	jal ra, mcd
+	div a0, s1, a0
+	
+	ld ra, 0(sp)
+	ld s1, 8(sp)
+	addi sp, sp, 16
+	ret
+	
+
+
+
+
+
+
