@@ -35,5 +35,26 @@ _start:
 ##### function part #####
 
 passrules:
+	addi sp, sp, -24
+	sd ra, 0(sp)
+	sd a0, 8(sp)
+	sd s0, 18(sp)
+	
+	li a1, 'A'
+	li a2, 'Z'
+	jal ra, contains
+	add s0, a0, zero
+	
+	ld a0, 8(sp)
+	li a1, '0'
+	li a2, '9'
+	jal ra, contains
+	
+	and a0, a0, s0
+	
+	ld ra, 0(sp)
+	ld s0, 16(sp)
+	addi sp, sp, 24
+	ret
 	
     
