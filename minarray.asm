@@ -64,7 +64,7 @@ continue:
 	j while_loop
 end1:
 	mv a0, t0
-	ret
+	jr ra
 	
 	
 
