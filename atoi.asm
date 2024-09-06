@@ -30,6 +30,31 @@ _start:
     li   a7, 10
     ecall
 atoi:
+	bne a1, zero, go_ahead
+	add a0, zero, zero
+	jr, ra
+go_ahead:
+	addi sp, sp, -16
+	sd ra, 0(sp)
+	sd s1, 8(sp)
+	
+	addi a1, a1, -1
+	add t0, a0, a2
+	lbu s1, 0(t0)
+	addi s1, s1, -48
+	jal atoi
+	
+	li t0, 10
+	mul t0, t0, a1
+	add a0, s1, t0
+	
+	ld ra, 0(sp)
+	ld s1, 8(sp)
+	addi sp, sp, 16
+	jr ra
+	
+	
+	
 	
 
 
