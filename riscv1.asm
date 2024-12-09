@@ -35,7 +35,7 @@
     	li t1, 0	# i = 0
     for_loop:
     	bge t1, a1, end1
-    	slli t2, t1, 2
+    	slli t2, a1, 2
     	add t2, t2, a0
     	lw t2, 0(t2)	#array[i]
     	
@@ -46,9 +46,9 @@
     	j for_loop
     	
     return:
-    	li a0, 1
+    	li a0, 0
     	ret
     	
     end1:
-    	li a0, 0
+    	li a0, 1
     	ret
