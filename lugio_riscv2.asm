@@ -42,3 +42,36 @@ countones:
 
 #******************************************************
 # completa la funzione ones_arr nel campo sottostante
+
+ones_arr:
+    addi sp, sp, -24
+    sd   ra, 0(sp)
+    sd   s1, 8(sp)
+    sd   s2, 16(sp)
+    
+    slli a2, a2, 1
+    add  s1, a2, a1
+
+    add  a0, a0, a2
+    lh   a0, 0(a0)
+    jal  ra, countones
+    mv   s2, a0
+
+    lh   a0, 0(s1)
+    jal  ra, countones
+
+    mul  a0, s2, a0
+
+    ld   ra, 0(sp)
+    ld   s1, 8(sp)
+    ld   s2, 16(sp)
+    addi sp, sp, 24
+    jr   ra
+
+	
+	
+	
+	
+	
+	
+	
