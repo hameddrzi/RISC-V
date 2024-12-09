@@ -31,5 +31,28 @@
         ret
     #******************************************************
     # completare la funzione sumf nel campo di sotto
+    
     				
- 		
+    sumf:
+    	addi sp, sp, -32
+    	sd ra, 0(sp)
+    	sd a0, 8(sp)
+    	sd s1, 16(sp)
+    	sd s2, 24(sp)
+    	
+    	jal ra, foo
+    	mv s1, a0
+    	
+    	
+    	
+    															
+    																
+    																								
+    																																								
+    																
+
+    	ld ra, 0(sp)
+    	ld a0, 8(sp)
+    	ld s1, 16(sp)
+    	ld s2, 24(sp)	
+    	addi sp, sp, 32
