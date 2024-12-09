@@ -36,23 +36,28 @@
     sumf:
     	addi sp, sp, -32
     	sd ra, 0(sp)
-    	sd a0, 8(sp)
-    	sd s1, 16(sp)
-    	sd s2, 24(sp)
+    	sd s1, 8(sp)
+    	sd s2, 16(sp)
+    	sd s3, 24(sp)
     	
-    	jal ra, foo
     	mv s1, a0
+    	addi s2, a1, -1
     	
+    	lw a0, 0(s1)
+    	jal ra, foo
+    	mv s3, a0
     	
+    	slli s2, s2, 2
+    	add s1, s1, s2
+    	lw a0, 0(s1)
+    	jal ra, foo
     	
-    															
-    																
-    																								
-    																																								
-    																
+    	add a0, s3, a0
+    																																																			
 
     	ld ra, 0(sp)
-    	ld a0, 8(sp)
-    	ld s1, 16(sp)
-    	ld s2, 24(sp)	
+    	ld s1, 8(sp)
+    	ld s2, 16(sp)
+    	ld s3, 24(sp)	
     	addi sp, sp, 32
+    	ret
